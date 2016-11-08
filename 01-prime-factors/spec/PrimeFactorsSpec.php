@@ -15,4 +15,9 @@ class PrimeFactorsSpec extends ObjectBehavior
 	{
 		$this->generate(2)->shouldReturn([2]);
 	}
+
+	function it_should_return_an_array_containing_3_when_passed_3()
+	{
+		$this->generate(3)->shouldReturn([3]);
+	}
 }
