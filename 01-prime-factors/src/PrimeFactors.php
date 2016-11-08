@@ -5,18 +5,18 @@ class PrimeFactors
 
     public function generate($number)
     {
-			if ($number > 3) {
-				return array(2,2);
+			$primeNumbers = [];
+
+			while ($number % 2 == 0) {
+				$primeNumbers[] = 2;
+				$number = $number / 2;
 			}
 
-			if ($number > 2) {
-				return array(3);
+			while ($number % 3 == 0) {
+				$primeNumbers[] = 3;
+				$number = $number / 3;
 			}
 
-			if ($number > 1) {
-				return array(2);
-			}
-
-			return array();
+			return $primeNumbers;
     }
 }
