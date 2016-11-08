@@ -6,14 +6,11 @@ class PrimeFactors
     public function generate($number)
     {
 			$primeNumbers = [];
-			$divider = 2;
 
-			while ($number > 1) {
-				while ($number % $divider == 0) {
+			for ($divider = 2; $number > 1; $divider++) {
+				for (; $number % $divider == 0; $number = $number / $divider) {
 					$primeNumbers[] = $divider;
-					$number = $number / $divider;
 				}
-				$divider++;
 			}
 
 			return $primeNumbers;
