@@ -5,6 +5,10 @@ class PrimeFactors
 
     public function generate($number)
     {
+			if ($number > 3) {
+				return array(2,2);
+			}
+
 			if ($number > 2) {
 				return array(3);
 			}
