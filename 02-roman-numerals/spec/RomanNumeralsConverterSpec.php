@@ -13,5 +13,15 @@ class RomanNumeralsConverterSpec extends ObjectBehavior
 	{
 		$this->convert(1)->shouldReturn("I");
 	}
+
+	function it_returns_II_for_2()
+	{
+		$this->convert(2)->shouldReturn("II");
+	}
+
+	function it_returns_III_for_3()
+	{
+		$this->convert(3)->shouldReturn("III");
+	}
 }
 

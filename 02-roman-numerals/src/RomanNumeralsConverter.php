@@ -6,6 +6,12 @@ class RomanNumeralsConverter
 {
     public function convert($number)
     {
-			return "I";
+			$roman_number = '';
+
+			for ($i = 0; $i < $number; $i++) {
+				$roman_number .= "I";
+			}
+
+			return $roman_number;
     }
 }
