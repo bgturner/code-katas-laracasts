@@ -18,6 +18,13 @@ class RomanNumeralsConverter
 				$roman_number = "IV";
 			}
 
+			if ($number >= 5 && $number <= 8) {
+				$roman_number .= "V";
+				for ($i = 5; $i < $number; $i++) {
+					$roman_number .= "I";
+				}
+			}
+
 			return $roman_number;
     }
 }
