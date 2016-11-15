@@ -8,7 +8,8 @@ class RomanNumeralsConverter
     {
 			$roman_number = '';
 
-			if ($number <= 3) {
+			if ($number >= 0 && $number <= 3) {
+				$roman_number .= "";
 				for ($i = 0; $i < $number; $i++) {
 					$roman_number .= "I";
 				}
