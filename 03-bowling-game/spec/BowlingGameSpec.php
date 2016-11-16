@@ -34,5 +34,16 @@ class BowlingGameSpec extends ObjectBehavior
 		$this->score()->shouldReturn(18);
 	}
 
+	function it_scores_a_strike()
+	{
+		$this->roll(10);
+		$this->roll(4);
+		$this->roll(3);
+		for ($i = 0; $i < 16; $i++) {
+			$this->roll(0);
+		}
+		$this->score()->shouldReturn(24);
+	}
+
 }
 

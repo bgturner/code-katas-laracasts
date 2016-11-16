@@ -25,11 +25,15 @@ class BowlingGame
 
 			if ($this->isSpare($this->roll)) {
 				$this->score += $this->scoreSpare($this->roll);
+				$this->roll += 2;
+			} elseif ($this->isStrike($this->roll)) {
+				$this->score += $this->scoreStrike($this->roll);
+				$this->roll += 1;
+				continue;
 			} else {
 				$this->score += $this->scoreDefaultFrame();
+				$this->roll += 2;
 			}
-
-			$this->roll += 2;
 
 		}
 
@@ -46,6 +50,15 @@ class BowlingGame
 	}
 
 	private function scoreSpare($roll)
+	{
+		return $this->rolls[$roll] + $this->rolls[$roll + 1] + $this->rolls[$roll + 2];
+	}
+
+	private function isStrike($roll) {
+		return ($this->rolls[$roll] == 10) ? true : false;
+	}
+
+	private function scoreStrike($roll)
 	{
 		return $this->rolls[$roll] + $this->rolls[$roll + 1] + $this->rolls[$roll + 2];
 	}
