@@ -99,14 +99,34 @@ class RomanNumeralsConverterSpec extends ObjectBehavior
 		$this->convert(30)->shouldReturn("XXX");
 	}
 
-	function it_returns_ILIX_for_49()
+	function it_returns_XLIX_for_49()
 	{
-		$this->convert(49)->shouldReturn("ILIX");
+		$this->convert(49)->shouldReturn("XLIX");
 	}
 
 	function it_returns_L_for_50()
 	{
 		$this->convert(50)->shouldReturn("L");
+	}
+
+	function it_returns_XCIX_for_99()
+	{
+		$this->convert(99)->shouldReturn("XCIX");
+	}
+
+	function it_returns_C_for_100()
+	{
+		$this->convert(100)->shouldReturn("C");
+	}
+
+	function it_returns_CMXCIX_for_999()
+	{
+		$this->convert(999)->shouldReturn("CMXCIX");
+	}
+
+	function it_returns_M_for_1000()
+	{
+		$this->convert(1000)->shouldReturn("M");
 	}
 
 }
