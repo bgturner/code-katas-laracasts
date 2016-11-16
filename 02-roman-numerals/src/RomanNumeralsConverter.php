@@ -1,38 +1,50 @@
-<?php
-
-namespace BTCodeKatas;
+<?php namespace BTCodeKatas;
 
 class RomanNumeralsConverter
 {
 
-		public $roman_number;
+	/**
+	 * The roman numeral
+	 *
+	 * @var mixed
+	 */
+	public $roman_number;
 
-		public $dict = array(
-			1000 => "M",
-			900 => "CM",
-			100 => "C",
-			90 => "XC",
-			50 => "L",
-			40 => "XL",
-			10 => "X",
-			9  => "IX",
-			5  => "V",
-			4  => "IV",
-			1  => "I",
-		);
+	/**
+	 * Defines the numerals and the numbers associated with them.
+	 *
+	 * @var array
+	 */
+	public $dict = array(
+		1000 => "M",
+		900 => "CM",
+		100 => "C",
+		90 => "XC",
+		50 => "L",
+		40 => "XL",
+		10 => "X",
+		9  => "IX",
+		5  => "V",
+		4  => "IV",
+		1  => "I",
+	);
 
-    public function convert($number)
-    {
-			$this->roman_number = '';
+	/**
+	 * Converts a given number to a roman numer.
+	 *
+	 * @param mixed $number
+	 */
+	public function convert($number)
+	{
+		$this->roman_number = '';
 
-			foreach ($this->dict as $num => $numeral) {
-				while ($number >= $num) {
-					$this->roman_number .= $numeral;
-					$number -= $num;
-				}
+		foreach ($this->dict as $num => $numeral) {
+			while ($number >= $num) {
+				$this->roman_number .= $numeral;
+				$number -= $num;
 			}
+		}
 
-			return $this->roman_number;
-    }
-
+		return $this->roman_number;
+	}
 }
