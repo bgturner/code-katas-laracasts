@@ -7,12 +7,20 @@ class RomanNumeralsConverter
 
 		public $roman_number;
 
+		public $dict = array(
+			10 => "X",
+			5 => "V",
+		);
+
     public function convert($number)
     {
 			$this->roman_number = '';
 
-			$number = $this->reduce($number, 10, 'X');
-			$number = $this->reduce($number, 5, 'V');
+			foreach ($this->dict as $num => $numeral) {
+				while ($number >= $num) {
+					$number = $this->reduce($number, $num, $numeral);
+				}
+			}
 
 			if ($number == 4) {
 				$this->roman_number = "IV";
