@@ -33,3 +33,13 @@ phpspec run
 ```
 
 ![Example creating the spec and class files.](phpspec_with_namespacing.png)
+
+Additionally this is the first time I made use of `gulp` and set it up to watch the project and automatically run the tests on file save.
+
+To use this feature, install gulp globally on the system, install the `npm` modules for this project and run the default gulp tasks:
+
+```
+npm install -g gulp
+npm install
+gulp
+```
