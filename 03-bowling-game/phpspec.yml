@@ -1,0 +1,4 @@
+suites:
+    btcodekatas:
+        namespace: BTCodeKatas
+        psr4_prefix: BTCodeKatas
