@@ -49,6 +49,11 @@ class RomanNumeralsConverterSpec extends ObjectBehavior
 		$this->convert(8)->shouldReturn("VIII");
 	}
 
+	function it_returns_IX_for_9()
+	{
+		$this->convert(9)->shouldReturn("IX");
+	}
+
 	function it_returns_X_for_10()
 	{
 		$this->convert(10)->shouldReturn("X");
@@ -69,6 +74,11 @@ class RomanNumeralsConverterSpec extends ObjectBehavior
 		$this->convert(13)->shouldReturn("XIII");
 	}
 
+	function it_returns_XIV_for_14()
+	{
+		$this->convert(14)->shouldReturn("XIV");
+	}
+
 	function it_returns_XV_for_15()
 	{
 		$this->convert(15)->shouldReturn("XV");
@@ -87,6 +97,16 @@ class RomanNumeralsConverterSpec extends ObjectBehavior
 	function it_returns_XXX_for_30()
 	{
 		$this->convert(30)->shouldReturn("XXX");
+	}
+
+	function it_returns_ILIX_for_49()
+	{
+		$this->convert(49)->shouldReturn("ILIX");
+	}
+
+	function it_returns_L_for_50()
+	{
+		$this->convert(50)->shouldReturn("L");
 	}
 
 }

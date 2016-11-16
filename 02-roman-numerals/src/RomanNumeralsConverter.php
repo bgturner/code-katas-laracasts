@@ -8,8 +8,13 @@ class RomanNumeralsConverter
 		public $roman_number;
 
 		public $dict = array(
+			50 => "L",
+			40 => "IL",
 			10 => "X",
-			5 => "V",
+			9  => "IX",
+			5  => "V",
+			4  => "IV",
+			1  => "I",
 		);
 
     public function convert($number)
@@ -18,31 +23,12 @@ class RomanNumeralsConverter
 
 			foreach ($this->dict as $num => $numeral) {
 				while ($number >= $num) {
-					$number = $this->reduce($number, $num, $numeral);
-				}
-			}
-
-			if ($number == 4) {
-				$this->roman_number = "IV";
-			}
-
-			if ($number >= 0 && $number <= 3) {
-				for ($i = 0; $i < $number; $i++) {
-					$this->roman_number .= "I";
+					$this->roman_number .= $numeral;
+					$number -= $num;
 				}
 			}
 
 			return $this->roman_number;
     }
 
-		private function reduce($number, $reducer, $numeral) {
-
-			if ($number >= $reducer) {
-				$this->roman_number .= $numeral;
-				$number -= $reducer;
-			}
-
-			return $number;
-
-		}
 }
