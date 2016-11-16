@@ -22,5 +22,17 @@ class BowlingGameSpec extends ObjectBehavior
 		}
 		$this->score()->shouldReturn(20);
 	}
+
+	function it_scores_a_spare()
+	{
+		$this->roll(3);
+		$this->roll(7); // rolls a spare
+		$this->roll(4);
+		for ($i = 0; $i < 17; $i++) {
+			$this->roll(0);
+		}
+		$this->score()->shouldReturn(18);
+	}
+
 }
 
