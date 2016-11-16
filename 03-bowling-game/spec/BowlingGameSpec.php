@@ -25,12 +25,9 @@ class BowlingGameSpec extends ObjectBehavior
 
 	function it_scores_a_spare()
 	{
-		$this->roll(3);
-		$this->roll(7); // rolls a spare
+		$this->rollSpare();
 		$this->roll(4);
-		for ($i = 0; $i < 17; $i++) {
-			$this->roll(0);
-		}
+		$this->rollTimes(0, 17);
 		$this->score()->shouldReturn(18);
 	}
 
@@ -39,18 +36,27 @@ class BowlingGameSpec extends ObjectBehavior
 		$this->roll(10);
 		$this->roll(4);
 		$this->roll(3);
-		for ($i = 0; $i < 16; $i++) {
-			$this->roll(0);
-		}
+		$this->rollTimes(0, 16);
 		$this->score()->shouldReturn(24);
 	}
 
 	function it_scores_a_perfect_game()
 	{
-		for ($i = 0; $i < 12; $i++) {
-			$this->roll(10);
-		}
+		$this->rollTimes(10, 12);
 		$this->score()->shouldReturn(300);
+	}
+
+	public function rollSpare()
+	{
+		$this->roll(3);
+		$this->roll(7);
+	}
+
+	public function rollTimes($pins, $times)
+	{
+		for ($i = 0; $i < $times; $i++) {
+			$this->roll($pins);
+		}
 	}
 
 }
