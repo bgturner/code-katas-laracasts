@@ -4,12 +4,16 @@ namespace BTCodeKatas;
 
 class BowlingGame
 {
-    public function roll($argument1)
-    {
-    }
 
-    public function score()
-    {
-			return 20;
-    }
+	private $rolls = [];
+
+	public function roll($pins)
+	{
+		$this->rolls[] = $pins;
+	}
+
+	public function score()
+	{
+		return array_sum($this->rolls);
+	}
 }
