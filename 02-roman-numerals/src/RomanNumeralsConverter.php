@@ -4,30 +4,37 @@ namespace BTCodeKatas;
 
 class RomanNumeralsConverter
 {
+
+		public $roman_number;
+
     public function convert($number)
     {
-			$roman_number = '';
+			$this->roman_number = '';
 
-			if ($number >= 10) {
-				$roman_number .= "X";
-				$number -= 10;
-			}
-
-			if ($number >= 5) {
-				$roman_number .= "V";
-				$number -= 5;
-			}
+			$number = $this->reduce($number, 10, 'X');
+			$number = $this->reduce($number, 5, 'V');
 
 			if ($number == 4) {
-				$roman_number = "IV";
+				$this->roman_number = "IV";
 			}
 
 			if ($number >= 0 && $number <= 3) {
 				for ($i = 0; $i < $number; $i++) {
-					$roman_number .= "I";
+					$this->roman_number .= "I";
 				}
 			}
 
-			return $roman_number;
+			return $this->roman_number;
     }
+
+		private function reduce($number, $reducer, $numeral) {
+
+			if ($number >= $reducer) {
+				$this->roman_number .= $numeral;
+				$number -= $reducer;
+			}
+
+			return $number;
+
+		}
 }
