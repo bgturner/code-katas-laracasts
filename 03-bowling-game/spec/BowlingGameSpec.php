@@ -15,5 +15,12 @@ class BowlingGameSpec extends ObjectBehavior
 	// A Strike is when all pins are knocked down on the first roll of a frame
 	//  The points for that frame include the knocked down pins for the next two rolls
 
+	function it_scores_all_rolls()
+	{
+		for ($i = 0; $i < 20; $i++) {
+			$this->roll(1);
+		}
+		$this->score()->shouldReturn(20);
+	}
 }
 
