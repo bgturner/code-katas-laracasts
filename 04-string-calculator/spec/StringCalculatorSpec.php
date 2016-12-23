@@ -12,4 +12,9 @@ class StringCalculatorSpec extends ObjectBehavior
 	{
 		$this->add('')->shouldEqual(0);
 	}
+
+	function it_adds_two_numbers()
+	{
+		$this->add('1,2')->shouldEqual(3);
+	}
 }

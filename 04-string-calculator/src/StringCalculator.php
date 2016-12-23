@@ -4,8 +4,10 @@ namespace BTCodeKatas;
 
 class StringCalculator
 {
-	public function add($number)
+
+	public function add($numbers)
 	{
-		return 0;
+		$numbers = explode(',', $numbers);
+		return array_sum($numbers);
 	}
 }
