@@ -15,7 +15,7 @@ class StringCalculator
 
 		foreach ($numbers as $number) {
 
-			if ($number < 0) throw new InvalidArgumentException("Invalid Number Provided: $number");
+			$number = $this->gaurdAgainstInvalidNumber($number);
 
 			if ($number > 1000) continue;
 
@@ -23,5 +23,11 @@ class StringCalculator
 		}
 
 		return $total;
+	}
+
+	public function gaurdAgainstInvalidNumber($number)
+	{
+		if ($number < 0) throw new InvalidArgumentException("Invalid Number Provided: $number");
+		return $number;
 	}
 }
