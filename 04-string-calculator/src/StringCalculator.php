@@ -9,7 +9,7 @@ class StringCalculator
 	public function add($numbers)
 	{
 
-		$numbers = preg_split('/\s*(,|\\\n)\s*/', $numbers);
+		$numbers = $this->splitString($numbers);
 
 		$total = 0;
 
@@ -23,6 +23,12 @@ class StringCalculator
 		}
 
 		return $total;
+	}
+
+	public function splitString($numbers)
+	{
+		$numbers = preg_split('/\s*(,|\\\n)\s*/', $numbers);
+		return $numbers;
 	}
 
 	public function gaurdAgainstInvalidNumber($number)
