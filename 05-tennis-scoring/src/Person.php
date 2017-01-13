@@ -2,13 +2,17 @@
 
 class Person
 {
-	protected $name;
+	public $name;
 
-	protected $score;
+	public $points;
 
-	public function __construct($name, $score) {
+	public function __construct($name, $points) {
 		$this->name = $name;
-		$this->score = $score;
+		$this->points = $points;
+	}
+
+	public function earnPoints($points) {
+		$this->points += $points;
 	}
 }
 
