@@ -5,6 +5,7 @@ namespace spec\BTCodeKatas;
 use BTCodeKatas\StringCalculator;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
+use \InvalidArgumentException;
 
 class StringCalculatorSpec extends ObjectBehavior
 {
@@ -25,7 +26,7 @@ class StringCalculatorSpec extends ObjectBehavior
 
 	function it_disallows_negative_numbers()
 	{
-		$this->shouldThrow('InvalidArgumentException')->duringAdd('3,-2');
+		$this->shouldThrow(new InvalidArgumentException('Invalid Number Provided: -2'))->duringAdd('3,-2');
 	}
 
 	function it_ignores_numbers_greater_than_1000()

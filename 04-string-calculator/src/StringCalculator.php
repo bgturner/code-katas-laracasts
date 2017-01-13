@@ -1,6 +1,7 @@
 <?php
 
 namespace BTCodeKatas;
+use \InvalidArgumentException;
 
 class StringCalculator
 {
@@ -14,7 +15,7 @@ class StringCalculator
 
 		foreach ($numbers as $number) {
 
-			if ($number < 0) throw new \InvalidArgumentException;
+			if ($number < 0) throw new InvalidArgumentException("Invalid Number Provided: $number");
 
 			if ($number > 1000) continue;
 
