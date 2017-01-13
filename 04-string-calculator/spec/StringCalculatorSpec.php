@@ -33,4 +33,9 @@ class StringCalculatorSpec extends ObjectBehavior
 		$this->add('1,2,3,1001')->shouldEqual(6);
 	}
 
+	function it_allows_for_newline_delimiters()
+	{
+		$this->add('1,2,3\n4')->shouldEqual(10);
+	}
+
 }
