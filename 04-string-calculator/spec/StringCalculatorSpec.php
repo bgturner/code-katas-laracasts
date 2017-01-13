@@ -17,4 +17,9 @@ class StringCalculatorSpec extends ObjectBehavior
 	{
 		$this->add('1,2')->shouldEqual(3);
 	}
+
+	function it_finds_the_sum_of_any_amount_of_numbers()
+	{
+		$this->add('1,2,3,4,5')->shouldEqual(15);
+	}
 }
