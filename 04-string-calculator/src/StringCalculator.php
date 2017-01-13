@@ -27,7 +27,7 @@ class StringCalculator
 
 	public function splitString($numbers)
 	{
-		$numbers = preg_split('/\s*(,|\\\n)\s*/', $numbers);
+		$numbers = array_map( 'intval', preg_split('/\s*(,|\\\n)\s*/', $numbers));
 		return $numbers;
 	}
 
