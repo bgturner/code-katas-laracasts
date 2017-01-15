@@ -9,6 +9,13 @@ class Tennis
 
 	protected $player2;
 
+	protected $lookup = array(
+		0 => 'Love',
+		1 => 'Fifteen',
+		2 => 'Twenty',
+		3 => 'Fourty',
+	);
+
 	public function __construct($player1, $player2) {
 		$this->player1 = $player1;
 		$this->player2 = $player2;
@@ -17,19 +24,13 @@ class Tennis
 	public function score()
 	{
 
-		if ( $this->player1->points == 3 && $this->player2->points == 0 ) {
-			return "Fourty-Love";
-		}
+		$score = sprintf(
+			'%s-%s',
+			$this->lookup[$this->player1->points],
+			($this->lookup[$this->player1->points] == $this->lookup[$this->player2->points]) ? 'All' : $this->lookup[$this->player2->points]
+		);
 
-		if ( $this->player1->points == 2 && $this->player2->points == 0 ) {
-			return "Twenty-Love";
-		}
-
-		if ( $this->player1->points == 1 && $this->player2->points == 0 ) {
-			return "Fifteen-Love";
-		}
-
-		return "Love-All";
+		return $score;
 	}
 }
 
