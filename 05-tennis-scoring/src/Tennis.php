@@ -24,13 +24,27 @@ class Tennis
 	public function score()
 	{
 
-		$score = sprintf(
-			'%s-%s',
-			$this->lookup[$this->player1->points],
-			$this->tied() ? 'All' : $this->lookup[$this->player2->points]
-		);
+		if ($this->hasWinner()) {
+			$score = "Win for " . $this->winner()->name;
+		} else {
+			$score = sprintf(
+				'%s-%s',
+				$this->lookup[$this->player1->points],
+				$this->tied() ? 'All' : $this->lookup[$this->player2->points]
+			);
+		}
 
 		return $score;
+	}
+
+	public function winner() {
+		return $this->player1->points > $this->player2->points ? $this->player1 : $this->player2;
+	}
+
+	public function hasWinner()
+	{
+		return max($this->player1->points, $this->player2->points) > 3
+		  	&& abs($this->player1->points - $this->player2->points) > 2;
 	}
 
 	public function tied()
