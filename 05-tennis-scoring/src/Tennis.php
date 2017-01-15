@@ -27,10 +27,15 @@ class Tennis
 		$score = sprintf(
 			'%s-%s',
 			$this->lookup[$this->player1->points],
-			($this->lookup[$this->player1->points] == $this->lookup[$this->player2->points]) ? 'All' : $this->lookup[$this->player2->points]
+			$this->tied() ? 'All' : $this->lookup[$this->player2->points]
 		);
 
 		return $score;
+	}
+
+	public function tied()
+	{
+		return $this->lookup[$this->player1->points] == $this->lookup[$this->player2->points];
 	}
 }
 
