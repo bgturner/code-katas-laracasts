@@ -26,6 +26,8 @@ class Tennis
 
 		if ($this->hasWinner()) {
 			$score = "Win for " . $this->winner()->name;
+		} elseif ($this->hasTheAdvantage() ) {
+			$score = "Advantage " . $this->winner()->name;
 		} else {
 			$score = sprintf(
 				'%s-%s',
@@ -44,6 +46,13 @@ class Tennis
 	public function hasWinner()
 	{
 		return $this->hasEnoughPointsToWin() && $this->isLeadingByTwo();
+	}
+
+	private function hasTheAdvantage() {
+		if ($this->hasEnoughPointsToWin() && !$this->tied() && !$this->isLeadingByTwo()) {
+			return true;
+		}
+		return false;
 	}
 
 	private function hasEnoughPointsToWin()
