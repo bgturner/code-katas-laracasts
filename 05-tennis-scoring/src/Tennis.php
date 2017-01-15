@@ -57,7 +57,7 @@ class Tennis
 
 	public function tied()
 	{
-		return $this->lookup[$this->player1->points] == $this->lookup[$this->player2->points];
+		return $this->player1->points == $this->player2->points;
 	}
 }
 
