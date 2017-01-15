@@ -1,6 +1,6 @@
 <?php
 
-namespace BTCodeKatas;
+namespace BTCodeKatas\TennisScore;
 
 class Tennis
 {

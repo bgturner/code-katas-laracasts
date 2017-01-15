@@ -1,9 +1,9 @@
 <?php
 
-namespace spec\BTCodeKatas;
+namespace spec\BTCodeKatas\TennisScore;
 
-use BTCodeKatas\Tennis;
-use BTCodeKatas\Person;
+use BTCodeKatas\TennisScore\Tennis;
+use BTCodeKatas\TennisScore\Person;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

@@ -1,4 +1,4 @@
-<?php namespace BTCodeKatas;
+<?php namespace BTCodeKatas\TennisScore;
 
 class Person
 {
