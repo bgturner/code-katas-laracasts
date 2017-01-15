@@ -25,20 +25,28 @@ class Tennis
 	{
 
 		if ($this->hasWinner()) {
-			$score = "Win for " . $this->winner()->name;
-		} elseif ($this->hasTheAdvantage() ) {
-			$score = "Advantage " . $this->winner()->name;
-		} elseif ($this->isDeuce()) {
-			$score = "Deuce";
-		} else {
-			$score = sprintf(
-				'%s-%s',
-				$this->lookup[$this->player1->points],
-				$this->tied() ? 'All' : $this->lookup[$this->player2->points]
-			);
+			return "Win for " . $this->winner()->name;
 		}
 
-		return $score;
+		if ($this->hasTheAdvantage() ) {
+			return "Advantage " . $this->winner()->name;
+		}
+
+		if ($this->isDeuce()) {
+			return "Deuce";
+		}
+
+		return $this->generalScore();
+
+	}
+
+	public function generalScore()
+	{
+		return sprintf(
+			'%s-%s',
+			$this->lookup[$this->player1->points],
+			$this->tied() ? 'All' : $this->lookup[$this->player2->points]
+		);
 	}
 
 	public function winner() {
