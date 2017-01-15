@@ -1,6 +1,6 @@
 <?php
 
-namespace BTCodeKatas;
+namespace BTCodeKatas\Bowling;
 
 class BowlingGame
 {

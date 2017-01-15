@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\BTCodeKatas;
+namespace spec\BTCodeKatas\Bowling;
 
-use BTCodeKatas\BowlingGame;
+use BTCodeKatas\Bowling\BowlingGame;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

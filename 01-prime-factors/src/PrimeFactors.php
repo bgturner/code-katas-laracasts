@@ -1,5 +1,7 @@
 <?php
 
+namespace BTCodeKatas\Prime;
+
 class PrimeFactors
 {
 

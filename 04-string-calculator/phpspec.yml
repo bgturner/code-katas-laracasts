@@ -1,4 +1,4 @@
 suites:
-    btcodekatas:
-        namespace: BTCodeKatas
-        psr4_prefix: BTCodeKatas
+    btcodekatas_stringcalc:
+        namespace: BTCodeKatas\StringCalc
+        psr4_prefix: BTCodeKatas\StringCalc

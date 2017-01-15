@@ -1,4 +1,4 @@
 suites:
-    btcodekatas:
-        namespace: BTCodeKatas
-        psr4_prefix: BTCodeKatas
+    btcodekatas_bowling:
+        namespace: BTCodeKatas\Bowling
+        psr4_prefix: BTCodeKatas\Bowling

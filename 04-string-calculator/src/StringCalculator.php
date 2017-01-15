@@ -1,6 +1,6 @@
 <?php
 
-namespace BTCodeKatas;
+namespace BTCodeKatas\StringCalc;
 use \InvalidArgumentException;
 
 class StringCalculator

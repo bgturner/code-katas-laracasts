@@ -1,4 +1,4 @@
 suites:
-    btcodekatas:
-        namespace: BTCodeKatas
-        psr4_prefix: BTCodeKatas
+    btcodekatas_romannumerals:
+        namespace: BTCodeKatas\RomanNumerals
+        psr4_prefix: BTCodeKatas\RomanNumerals

@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\BTCodeKatas;
+namespace spec\BTCodeKatas\RomanNumerals;
 
-use BTCodeKatas\RomanNumeralsConverter;
+use BTCodeKatas\RomanNumerals\RomanNumeralsConverter;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

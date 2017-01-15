@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\BTCodeKatas;
+namespace spec\BTCodeKatas\StringCalc;
 
-use BTCodeKatas\StringCalculator;
+use BTCodeKatas\StringCalc\StringCalculator;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use \InvalidArgumentException;

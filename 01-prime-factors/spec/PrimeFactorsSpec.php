@@ -1,7 +1,8 @@
 <?php
 
-namespace spec;
+namespace spec\BTCodeKatas\Prime;
 
+use BTCodeKatas\Prime\PrimeFactors;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

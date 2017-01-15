@@ -1,4 +1,4 @@
-<?php namespace BTCodeKatas;
+<?php namespace BTCodeKatas\RomanNumerals;
 
 class RomanNumeralsConverter
 {
