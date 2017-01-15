@@ -1,0 +1,15 @@
+{
+  "name": "04-tennis-scoring",
+  "version": "1.0.0",
+  "description": "Working through Tennis Scoring PHP code kata from laracasts.",
+  "main": "index.js",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-phpspec": "^0.5.4"
+  },
+  "scripts": {
+    "test": "phpspec run"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,4 @@
+suites:
+    btcodekatas:
+        namespace: BTCodeKatas\TennisScore
+        psr4_prefix: BTCodeKatas\TennisScore
