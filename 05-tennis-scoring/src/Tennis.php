@@ -28,6 +28,8 @@ class Tennis
 			$score = "Win for " . $this->winner()->name;
 		} elseif ($this->hasTheAdvantage() ) {
 			$score = "Advantage " . $this->winner()->name;
+		} elseif ($this->isDeuce()) {
+			$score = "Deuce";
 		} else {
 			$score = sprintf(
 				'%s-%s',
@@ -53,6 +55,10 @@ class Tennis
 			return true;
 		}
 		return false;
+	}
+
+	private function isDeuce() {
+		return $this->player1->points + $this->player2->points >= 6 && $this->tied();
 	}
 
 	private function hasEnoughPointsToWin()
