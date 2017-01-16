@@ -24,9 +24,24 @@ class FizzBuzzSpec extends ObjectBehavior
 		$this->execute(3)->shouldReturn('Fizz');
 	}
 
+	function it_returns_4_for_the_number_4()
+	{
+		$this->execute(4)->shouldReturn(4);
+	}
+
 	function it_returns_Buzz_for_the_number_5()
 	{
 		$this->execute(5)->shouldReturn('Buzz');
+	}
+
+	function it_returns_7_for_the_number_7()
+	{
+		$this->execute(7)->shouldReturn(7);
+	}
+
+	function it_returns_8_for_the_number_8()
+	{
+		$this->execute(8)->shouldReturn(8);
 	}
 
 }
