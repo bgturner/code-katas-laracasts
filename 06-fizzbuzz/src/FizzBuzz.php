@@ -15,14 +15,9 @@ class FizzBuzz
 
 	public function executeRange($number)
 	{
-		$numbers = range(1, $number);
-		$output = array();
-
-		foreach ($numbers as $number) {
-			$output[] = $this->execute($number);
-		}
-
-		return $output;
+		return array_map(function($i){
+			return $this->execute($i);
+		}, range(1, $number));
 	}
 }
 
