@@ -6,7 +6,7 @@ class FizzBuzz
 {
 	public function execute($number)
 	{
-		return 1;
+		return $number;
 	}
 }
 
