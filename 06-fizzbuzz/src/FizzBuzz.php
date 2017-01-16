@@ -12,5 +12,17 @@ class FizzBuzz
 		if ($number % 3 == 0) return "Fizz";
 		return $number;
 	}
+
+	public function executeRange($number)
+	{
+		$numbers = range(1, $number);
+		$output = array();
+
+		foreach ($numbers as $number) {
+			$output[] = $this->execute($number);
+		}
+
+		return $output;
+	}
 }
 

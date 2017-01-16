@@ -64,5 +64,10 @@ class FizzBuzzSpec extends ObjectBehavior
 		$this->execute(15)->shouldReturn("FizzBuzz");
 	}
 
+	function it_generates_a_FizzBuzz_array_when_given_a_number_greater_than_zero()
+	{
+		$this->executeRange(10)->shouldReturn([1,2,'Fizz',4,'Buzz','Fizz',7,8,'Fizz','Buzz']);
+	}
+
 }
 
