@@ -1,0 +1,4 @@
+suites:
+    btcodekatas_fizzbuzz:
+        namespace: BTCodeKatas\FizzBuzz
+        psr4_prefix: BTCodeKatas\FizzBuzz
